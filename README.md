@@ -58,8 +58,9 @@ virsh net-define examplenet.xml
 Note: you may have to assign a special bridge name in the config file to
 avaoid libvirt re-using an existing one.
 
- (<bridge name='virbrXX' stp='on' delay='0'/>)
-
+```
+ <bridge name='virbrXX' stp='on' delay='0'/>
+```
 
 And start the network:
 
