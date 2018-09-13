@@ -32,8 +32,8 @@ and associated hostnames like:
  sep005
 ```
 
-that should match the ip given by the dhcp lease. The lease disappears as the
-vagrant machine halts and can be re-used likewise by other machines if free.
+These should match the ip given by the dhcp lease. The lease disappears as the
+vagrant machine halts and can be re-used likewise by other machines.
 
 It should be possible doing this without the need of third party plugins just
 by modifying our libvirt network configuration. 
@@ -41,14 +41,14 @@ by modifying our libvirt network configuration.
 Prerequisites
 -------------
 
-Your vagrant boxes must honor DHCP's "hostname" option and allow to set their
-hostname via DHCP for better integration.
+Your vagrant boxes must honor DHCP's "hostname" option and allow to set the
+systems hostname via DHCP client for better integration.
 
 
 Configuring Libvirt
 -------------
 
-Define a new libvirt network from the provided esample using:
+Define a new libvirt network from the provided example using:
 
 ```
 virsh net-define examplenet.xml
@@ -134,8 +134,8 @@ vagrant@sep003:~$ host 10.1.0.4
 Configuring the Hostsystem
 -------------
 In order to make the host system aware of the hostnames and domain you have to make
-your system wide dnsmasq aware of the domain server. Place the provided example file
-in:
+your system wide dnsmasq aware of the libvirt dnsmasq server. Place the provided example 
+file in:
 
 ```
 /etc/dnsmasq.d/my-cloud.local
