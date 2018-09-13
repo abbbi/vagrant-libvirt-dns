@@ -131,6 +131,24 @@ vagrant@sep003:~$ host 10.1.0.4
 4.0.1.10.in-addr.arpa domain name pointer sep004.mycloud.local.
 ```
 
+Configuring the Hostsystem
+-------------
+In order to make the host system aware of the hostnames and domain you have to make
+your system wide dnsmasq aware of the domain server. Place the provided example file
+in:
+
+```
+/etc/dnsmasq.d/my-cloud.local
+```
+
+And reload your dnsmasq service. Now the hostsystem should be able to resolve your
+vagrant boxes aswell:
+
+```
+vagrantuser@hostsystem:~$ host sep003.mycloud.local
+sep003.mycloud.local has address 10.1.0.3
+```
+
 Freeing leases
 -------------
 
@@ -139,7 +157,7 @@ Leases are automatically freed as the vagrant box is halted:
 ```
 :~/mynet$ vagrant halt
 ==> default: Halting domain...
-abi@cefix:~/mynet$ virsh net-dhcp-leases my_cloud
+~/mynet$ virsh net-dhcp-leases my_cloud
  Expiry Time          MAC address        Protocol  IP address                Hostname        Client ID or DUID
 -------------------------------------------------------------------------------------------------------------------
  2018-09-13 18:14:17  52:54:00:16:ee:ab  ipv4      10.1.0.3/24               sep003          -
