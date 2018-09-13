@@ -27,9 +27,11 @@ As example, lets say we have an dhcp range that goes from:
 
 and associated hostnames like:
 
+```
  sep003
  sep004
  sep005
+```
 
 that should match the ip given by the dhcp lease. The lease disappears as the
 vagrant machine halts and can be re-used likewise by other machines if free.
