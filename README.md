@@ -2,9 +2,8 @@ About
 =========
 
 There are various ways to manage your vagrant machines hostnames and IP
-addresses.  Most of them require you to install additional vagrant plugins,
-some of them are landrush,hostmanager and various others. some of them work,
-some not.
+addresses.  Most of them require you to install additional vagrant plugins (
+landrush, hostmanager, vagrant-dns)
 
 One of them is vagrant-landrush, which works nicely but has problems in multi
 user environments (spinning up an DNS Service for each vagrant vm)
