@@ -1,0 +1,26 @@
+<network ipv6='yes'>
+  <name>my_cloud</name>
+  <forward mode='nat'>
+    <nat>
+      <port start='1024' end='65535'/>
+    </nat>
+  </forward>
+  <domain name='mycloud.local'/>
+  <dns>
+    <host ip='10.1.0.3'>
+      <hostname>sep003</hostname>
+    </host>
+    <host ip='10.1.0.4'>
+      <hostname>sep004</hostname>
+    </host>
+    <host ip='10.1.0.5'>
+      <hostname>sep005</hostname>
+    </host>
+  </dns>
+  <ip address='10.1.0.1' netmask='255.255.255.0'>
+    <dhcp>
+      <range start='10.1.0.3' end='10.1.0.5'/>
+    </dhcp>
+  </ip>
+</network>
+
