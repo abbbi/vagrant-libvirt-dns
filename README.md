@@ -24,12 +24,12 @@ As example, lets say we have an dhcp range that goes from:
 
  10.1.0.3   to  10.1.0.5
 
-and associated hostnames like:
+and want those ips to be associated with hostnames like:
 
 ```
- sep003
- sep004
- sep005
+ sep003.mycloud.local -> 10.1.0.3
+ sep004.mycloud.local -> 10.1.0.4
+ sep005.mycloud.local -> 10.1.0.5
 ```
 
 These should match the ip given by the dhcp lease. The lease disappears as the
